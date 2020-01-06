@@ -51,28 +51,31 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="peterwoo1224">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="下载1234wget https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;downloads&#x2F;logstash&#x2F;logstash-7.4.2.tar.gzwget https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;downloads&#x2F;kibana&#x2F;kibana-7.4.2-linux-x86_64.tar.gzwget https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;dow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ELK安装">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;06&#x2F;ELK%E5%AE%89%E8%A3%85&#x2F;index.html">
 <meta property="og:site_name" content="peterwoo1224">
+<meta property="og:description" content="下载1234wget https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;downloads&#x2F;logstash&#x2F;logstash-7.4.2.tar.gzwget https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;downloads&#x2F;kibana&#x2F;kibana-7.4.2-linux-x86_64.tar.gzwget https:&#x2F;&#x2F;artifacts.elastic.co&#x2F;dow">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-01-06T03:15:41.369Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/01/06/ELK%E5%AE%89%E8%A3%85/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>peterwoo1224</title>
+  <title>ELK安装 | peterwoo1224</title>
   
 
 
@@ -167,10 +170,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/06/ELK%E5%AE%89%E8%A3%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -184,8 +187,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/06/ELK%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">ELK安装</a>
+          ELK安装
         </h1>
 
         <div class="post-meta">
@@ -209,7 +211,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://artifacts.elastic.co/downloads/logstash/logstash-7.4.2.tar.gz</span><br><span class="line">wget https://artifacts.elastic.co/downloads/kibana/kibana-7.4.2-linux-x86_64.tar.gz</span><br><span class="line">wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-linux-x86_64.tar.gz</span><br><span class="line">wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.2-linux-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+        <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://artifacts.elastic.co/downloads/logstash/logstash-7.4.2.tar.gz</span><br><span class="line">wget https://artifacts.elastic.co/downloads/kibana/kibana-7.4.2-linux-x86_64.tar.gz</span><br><span class="line">wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-linux-x86_64.tar.gz</span><br><span class="line">wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.2-linux-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
 <h1 id="Elasticsearch7-安装"><a href="#Elasticsearch7-安装" class="headerlink" title="Elasticsearch7 安装"></a>Elasticsearch7 安装</h1><h2 id="Elasticsearch7-X启动指定JDK11"><a href="#Elasticsearch7-X启动指定JDK11" class="headerlink" title="Elasticsearch7.X启动指定JDK11"></a>Elasticsearch7.X启动指定JDK11</h2><p>vi bin/elasticsearch</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#配置自己的jdk11</span><br><span class="line">export JAVA_HOME=/app/java/jdk-11.0.5</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line"></span><br><span class="line">#添加jdk判断</span><br><span class="line">if [ -x &quot;$JAVA_HOME/bin/java&quot; ]; then</span><br><span class="line">        JAVA=&quot;/app/java/jdk-11.0.5/bin/java&quot;</span><br><span class="line">else</span><br><span class="line">        JAVA=`which java`</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <p>完整配置</p>
@@ -238,94 +240,36 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rsyslog.d/secure.conf</span><br><span class="line"></span><br><span class="line"># 加载omkafka和imfile模块</span><br><span class="line">module(load=&quot;omkafka&quot;)</span><br><span class="line">module(load=&quot;imfile&quot;)</span><br><span class="line"></span><br><span class="line"># 日志格式模板</span><br><span class="line">template(name=&quot;json_lines&quot; type=&quot;list&quot; option.json=&quot;on&quot;) &#123;</span><br><span class="line">  constant(value=&quot;&#123;&quot;)</span><br><span class="line">  constant(value=&quot;\&quot;timestamp\&quot;:\&quot;&quot;)</span><br><span class="line">  property(name=&quot;timereported&quot; dateFormat=&quot;rfc3339&quot;)</span><br><span class="line">  constant(value=&quot;\&quot;,\&quot;message\&quot;:\&quot;&quot;)</span><br><span class="line">  property(name=&quot;msg&quot;)</span><br><span class="line">  constant(value=&quot;\&quot;,\&quot;host\&quot;:\&quot;&quot;)</span><br><span class="line">  property(name=&quot;hostname&quot;)</span><br><span class="line">  constant(value=&quot;\&quot;,\&quot;severity\&quot;:\&quot;&quot;)</span><br><span class="line">  property(name=&quot;syslogseverity-text&quot;)</span><br><span class="line">  constant(value=&quot;\&quot;,\&quot;facility\&quot;:\&quot;&quot;)</span><br><span class="line">  property(name=&quot;syslogfacility-text&quot;)</span><br><span class="line">  constant(value=&quot;\&quot;,\&quot;log-type\&quot;:\&quot;&quot;)</span><br><span class="line">  property(name=&quot;programname&quot;)</span><br><span class="line">  #constant(value=&quot;\&quot;,\&quot;procid\&quot;:\&quot;&quot;)</span><br><span class="line">  #property(name=&quot;procid&quot;)</span><br><span class="line">  constant(value=&quot;\&quot;&#125;\n&quot;)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">ruleset(name=&quot;rsyslog-secure-kafka&quot;) &#123;</span><br><span class="line">    #日志转发kafka</span><br><span class="line">    action (</span><br><span class="line">        type=&quot;omkafka&quot;</span><br><span class="line">        template=&quot;json_lines&quot;</span><br><span class="line">        confParam=[&quot;compression.codec=snappy&quot;, &quot;queue.buffering.max.messages=400000&quot;]</span><br><span class="line">        #partitions.number=&quot;4&quot;</span><br><span class="line">        topic=&quot;topic-rsyslog-secure&quot;</span><br><span class="line">        broker=&quot;kafka1:9092&quot;</span><br><span class="line">        queue.spoolDirectory=&quot;/tmp&quot;</span><br><span class="line">        queue.filename=&quot;rsyslog_secure_kafka&quot;</span><br><span class="line">        queue.size=&quot;360000&quot;</span><br><span class="line">        queue.maxdiskspace=&quot;2G&quot;</span><br><span class="line">        queue.highwatermark=&quot;216000&quot;</span><br><span class="line">        queue.discardmark=&quot;350000&quot;</span><br><span class="line">        queue.type=&quot;LinkedList&quot; </span><br><span class="line">        queue.dequeuebatchsize=&quot;4096&quot;</span><br><span class="line">        queue.timeoutenqueue=&quot;0&quot;</span><br><span class="line">        queue.maxfilesize=&quot;10M&quot; </span><br><span class="line">        queue.saveonshutdown=&quot;on&quot;</span><br><span class="line">        queue.workerThreads=&quot;4&quot;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"># 定义消息来源及设置相关的action</span><br><span class="line">input(type=&quot;imfile&quot; Tag=&quot;secure&quot; File=&quot;/var/log/secure&quot; Ruleset=&quot;rsyslog-secure-kafka&quot;)</span><br></pre></td></tr></table></figure>
 <h1 id="logstash-安装"><a href="#logstash-安装" class="headerlink" title="logstash 安装"></a>logstash 安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi pipelines.yml</span><br><span class="line">- pipeline.id: rsyslog</span><br><span class="line">  queue.type: persisted</span><br><span class="line">  path.config: &quot;/app/rzjk/logstash/config/conf.d/rsyslog.conf&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="WARNING-An-illegal-reflective-access-operation-has-occurred-报错-针对7-X版本在Java11上启动，可以换成1-8启动"><a href="#WARNING-An-illegal-reflective-access-operation-has-occurred-报错-针对7-X版本在Java11上启动，可以换成1-8启动" class="headerlink" title="WARNING: An illegal reflective access operation has occurred 报错 针对7.X版本在Java11上启动，可以换成1.8启动"></a>WARNING: An illegal reflective access operation has occurred 报错 针对7.X版本在Java11上启动，可以换成1.8启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">vi jvm.options</span><br><span class="line"></span><br><span class="line">--add-opens=java.base/java.lang=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.security=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.util=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.security.cert=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.util.zip=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.lang.reflect=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.util.regex=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.net=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.io=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/java.lang=ALL-UNNAMED</span><br><span class="line">--add-opens=java.base/javax.crypto=ALL-UNNAMED</span><br><span class="line">--add-opens=java.management/sun.management=ALL-UNNAMED</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/hello-world/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="peterwoo1224">
-      <meta itemprop="description" content="">
-    </span>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/11/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="peterwoo1224">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
+            <span class="post-nav-divider"></span>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-11 17:13:01" itemprop="dateCreated datePublished" datetime="2019-11-11T17:13:01+08:00">2019-11-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -354,6 +298,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载"><span class="nav-number">1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Elasticsearch7-安装"><span class="nav-number">2.</span> <span class="nav-text">Elasticsearch7 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Elasticsearch7-X启动指定JDK11"><span class="nav-number">2.1.</span> <span class="nav-text">Elasticsearch7.X启动指定JDK11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java垃圾回收"><span class="nav-number">2.2.</span> <span class="nav-text">java垃圾回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选-生成CA证书"><span class="nav-number">2.3.</span> <span class="nav-text">(可选)生成CA证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选-生成cert证书"><span class="nav-number">2.4.</span> <span class="nav-text">(可选)生成cert证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选-改变权限"><span class="nav-number">2.5.</span> <span class="nav-text">(可选)改变权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置elasticsearch-yml"><span class="nav-number">2.6.</span> <span class="nav-text">配置elasticsearch.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换x-pack-core-7-4-1-jar文件"><span class="nav-number">2.7.</span> <span class="nav-text">替换x-pack-core-7.4.1.jar文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载License到elasticsearch之前操作"><span class="nav-number">2.8.</span> <span class="nav-text">加载License到elasticsearch之前操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载License到elasticsearch"><span class="nav-number">2.9.</span> <span class="nav-text">加载License到elasticsearch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载License到elasticsearch之后操作"><span class="nav-number">2.10.</span> <span class="nav-text">加载License到elasticsearch之后操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动es"><span class="nav-number">2.11.</span> <span class="nav-text">启动es</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成用户密码"><span class="nav-number">2.12.</span> <span class="nav-text">生成用户密码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kibana-安装"><span class="nav-number">3.</span> <span class="nav-text">kibana 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-kibana-yml"><span class="nav-number">3.1.</span> <span class="nav-text">配置 kibana.yml</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cerebro-安装"><span class="nav-number">4.</span> <span class="nav-text">cerebro 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-application-conf"><span class="nav-number">4.1.</span> <span class="nav-text">配置 application.conf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rsyslog安装"><span class="nav-number">5.</span> <span class="nav-text">rsyslog安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rsyslog"><span class="nav-number">5.1.</span> <span class="nav-text">rsyslog</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#logstash-安装"><span class="nav-number">6.</span> <span class="nav-text">logstash 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WARNING-An-illegal-reflective-access-operation-has-occurred-报错-针对7-X版本在Java11上启动，可以换成1-8启动"><span class="nav-number">6.1.</span> <span class="nav-text">WARNING: An illegal reflective access operation has occurred 报错 针对7.X版本在Java11上启动，可以换成1.8启动</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
